@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { Menu, X, Copy, Check } from 'lucide-react';
 import { IMAGES, CONTRACT_ADDRESS, TWITTER_URL } from '../constants';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Vision', href: '#vision' },
-    { name: 'How to Buy', href: '#buy' },
-    { name: 'Game', href: '#game' },
-    { name: 'Chart', href: '#chart' },
+    { name: t.nav.about, href: '#about' },
+    { name: t.nav.vision, href: '#vision' },
+    { name: t.nav.buy, href: '#buy' },
+    { name: t.nav.game, href: '#game' },
+    { name: t.nav.chart, href: '#chart' },
   ];
 
   const handleCopy = () => {
@@ -20,23 +22,48 @@ const Navbar: React.FC = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'cn' : 'en');
+  };
+
   const truncateAddress = (addr: string) => {
     return `${addr.slice(0, 4)}...${addr.slice(-4)}`;
   };
 
+  // Reusable Language Toggle Component
+  const LanguageToggle = () => (
+    <div 
+      onClick={toggleLanguage}
+      className="relative w-16 h-8 bg-black/40 border border-cyan-500/30 rounded-full cursor-pointer flex items-center justify-between px-1 shadow-inner hover:border-cyan-400/60 transition-colors select-none"
+      title="Switch Language / 切换语言"
+    >
+      {/* Sliding indicator */}
+      <div 
+        className={`absolute top-1 bottom-1 w-[28px] bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.4)] transition-all duration-300 ease-in-out ${language === 'en' ? 'left-1' : 'left-[34px]'}`}
+      />
+      
+      {/* Labels */}
+      <span className={`relative z-10 text-[10px] font-bold w-1/2 text-center transition-colors duration-300 ${language === 'en' ? 'text-white' : 'text-cyan-500/50'}`}>EN</span>
+      <span className={`relative z-10 text-[10px] font-bold w-1/2 text-center transition-colors duration-300 ${language === 'cn' ? 'text-white' : 'text-cyan-500/50'}`}>CN</span>
+    </div>
+  );
+
   return (
-    <nav className="fixed w-full z-50 top-0 bg-red-900/95 backdrop-blur-md border-b-4 border-amber-400 shadow-lg">
+    <nav className="fixed w-full z-50 top-0 bg-red-950/80 backdrop-blur-xl border-b-2 border-cyan-400/50 shadow-[0_0_20px_rgba(34,211,238,0.2)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
           {/* Logo / Brand */}
           <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
-            <img 
-              src={IMAGES.LOGO} 
-              alt="Peng Logo" 
-              className="h-10 w-10 md:h-12 md:w-12 rounded-full border-2 border-amber-400 shadow-md"
-            />
-            <span className="font-chinese text-xl md:text-2xl text-amber-400 tracking-wider hidden sm:block">
+            <div className="relative">
+              <div className="absolute inset-0 bg-cyan-400 rounded-full blur-sm opacity-50"></div>
+              <img 
+                src={IMAGES.LOGO} 
+                alt="Peng Logo" 
+                className="relative h-10 w-10 md:h-12 md:w-12 rounded-full border-2 border-cyan-200"
+              />
+            </div>
+            <span className="font-chinese text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-100 to-white tracking-wider hidden sm:block drop-shadow-[0_0_5px_rgba(34,211,238,0.8)]">
               $PENG
             </span>
           </div>
@@ -49,22 +76,25 @@ const Navbar: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-2 py-2 rounded-md text-sm font-bold text-white hover:text-amber-300 transition-colors duration-300 font-chinese uppercase tracking-widest"
+                  className="px-2 py-2 rounded-md text-sm font-bold text-cyan-50 hover:text-cyan-400 transition-all duration-300 font-chinese uppercase tracking-widest hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"
                 >
                   {link.name}
                 </a>
               ))}
             </div>
 
+            {/* Language Toggle Slider */}
+            <LanguageToggle />
+
             {/* CA Display */}
             <div 
               onClick={handleCopy}
-              className="flex items-center gap-2 bg-black/40 hover:bg-black/60 px-3 py-1.5 rounded-full border border-amber-500/30 cursor-pointer transition-colors group"
-              title="Copy Contract Address"
+              className="flex items-center gap-2 bg-black/40 hover:bg-black/60 px-3 py-1.5 rounded-full border border-cyan-500/30 cursor-pointer transition-colors group"
+              title={t.nav.copyCa}
             >
-              <span className="text-amber-200 text-xs font-mono">CA:</span>
+              <span className="text-cyan-200 text-xs font-mono">CA:</span>
               <span className="text-white text-xs font-mono">{truncateAddress(CONTRACT_ADDRESS)}</span>
-              {copied ? <Check size={14} className="text-green-400" /> : <Copy size={14} className="text-amber-400 group-hover:text-white" />}
+              {copied ? <Check size={14} className="text-green-400" /> : <Copy size={14} className="text-cyan-400 group-hover:text-white" />}
             </div>
 
             {/* X Logo */}
@@ -72,9 +102,9 @@ const Navbar: React.FC = () => {
               href={TWITTER_URL} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center w-10 h-10 bg-black rounded-full border border-white/20 hover:border-amber-400 hover:shadow-[0_0_10px_rgba(255,255,255,0.4)] transition-all duration-300"
+              className="group relative inline-flex items-center justify-center w-10 h-10 bg-black rounded-full border border-cyan-500/30 hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all duration-300"
             >
-              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-white group-hover:fill-amber-400 transition-colors">
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-white group-hover:fill-cyan-400 transition-colors">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
               </svg>
             </a>
@@ -82,17 +112,20 @@ const Navbar: React.FC = () => {
             {/* Buy Button */}
             <a 
               href="#buy" 
-              className="bg-amber-400 hover:bg-amber-500 text-red-900 px-5 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg border-2 border-yellow-200 text-sm"
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-5 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(34,211,238,0.4)] border border-cyan-200 text-sm"
             >
-              Buy Now
+              {t.nav.buyNow}
             </a>
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex lg:hidden">
+          <div className="flex lg:hidden items-center gap-4">
+             {/* Mobile Language Toggle */}
+             <LanguageToggle />
+
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-amber-400 hover:text-white hover:bg-red-800 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-cyan-400 hover:text-white hover:bg-cyan-900/50 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? <X className="block h-8 w-8" /> : <Menu className="block h-8 w-8" />}
@@ -103,15 +136,15 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-red-950 border-t border-amber-900">
+        <div className="lg:hidden bg-red-950/95 backdrop-blur-xl border-t border-cyan-900">
           <div className="px-4 pt-4 pb-6 space-y-3">
             {/* Mobile CA */}
             <div 
               onClick={handleCopy}
-              className="flex items-center justify-between bg-black/40 px-4 py-3 rounded-lg border border-amber-500/30 cursor-pointer active:bg-black/60"
+              className="flex items-center justify-between bg-black/40 px-4 py-3 rounded-lg border border-cyan-500/30 cursor-pointer active:bg-black/60"
             >
-              <span className="text-amber-200 font-mono text-sm">CA: {truncateAddress(CONTRACT_ADDRESS)}</span>
-              {copied ? <Check size={16} className="text-green-400" /> : <Copy size={16} className="text-amber-400" />}
+              <span className="text-cyan-200 font-mono text-sm">CA: {truncateAddress(CONTRACT_ADDRESS)}</span>
+              {copied ? <Check size={16} className="text-green-400" /> : <Copy size={16} className="text-cyan-400" />}
             </div>
 
              {/* Mobile X Link */}
@@ -119,12 +152,12 @@ const Navbar: React.FC = () => {
               href={TWITTER_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full bg-black hover:bg-gray-900 text-white py-3 rounded-lg border border-white/10"
+              className="flex items-center justify-center gap-2 w-full bg-black hover:bg-gray-900 text-white py-3 rounded-lg border border-cyan-500/30"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
               </svg>
-              <span>Follow on X</span>
+              <span>{t.nav.follow}</span>
             </a>
 
             {navLinks.map((link) => (
@@ -132,7 +165,7 @@ const Navbar: React.FC = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 rounded-md text-base font-medium text-amber-100 hover:text-white hover:bg-red-800 text-center font-chinese uppercase tracking-widest"
+                className="block px-3 py-2 rounded-md text-base font-medium text-cyan-100 hover:text-white hover:bg-cyan-900/30 text-center font-chinese uppercase tracking-widest"
               >
                 {link.name}
               </a>
@@ -140,9 +173,9 @@ const Navbar: React.FC = () => {
             <a 
               href="#buy"
               onClick={() => setIsOpen(false)} 
-              className="block w-full text-center bg-amber-400 text-red-900 font-bold py-3 mt-4 rounded-md uppercase"
+              className="block w-full text-center bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold py-3 mt-4 rounded-md uppercase shadow-[0_0_15px_rgba(34,211,238,0.3)]"
             >
-              Buy on Pump.fun
+              {t.nav.buyPump}
             </a>
           </div>
         </div>

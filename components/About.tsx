@@ -1,55 +1,63 @@
 import React from 'react';
 import { IMAGES } from '../constants';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const About: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
-    <section id="about" className="py-20 relative overflow-hidden bg-red-900">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 relative overflow-hidden">
+      {/* Background with Ice Glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-red-950 to-slate-900"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         
         <div className="flex flex-col lg:flex-row items-center gap-12">
           
-          {/* Image Side */}
+          {/* Image Side with Icy Frame */}
           <div className="w-full lg:w-1/2">
-            <div className="relative rounded-2xl p-2 bg-gradient-to-br from-amber-300 to-red-600 shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500">
-              <img 
-                src={IMAGES.ABOUT_BANNER} 
-                alt="Peng Story Banner" 
-                className="rounded-xl w-full h-auto object-cover border-4 border-red-950"
-              />
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-amber-400 rounded-full flex items-center justify-center text-red-900 font-bold text-2xl border-4 border-red-950 shadow-lg hidden md:flex font-chinese">
-                幸运
+            <div className="relative rounded-2xl p-1 bg-gradient-to-br from-cyan-300 via-white to-cyan-500 shadow-[0_0_30px_rgba(34,211,238,0.4)] rotate-1 hover:rotate-0 transition-transform duration-500">
+              <div className="bg-red-950 p-2 rounded-xl">
+                 <img 
+                  src={IMAGES.ABOUT_BANNER} 
+                  alt="Peng Story Banner" 
+                  className="rounded-lg w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-amber-300 to-yellow-500 rounded-full flex items-center justify-center text-red-900 font-bold text-2xl border-4 border-white shadow-[0_0_20px_rgba(251,191,36,0.5)] hidden md:flex font-chinese">
+                {t.about.sticker}
               </div>
             </div>
           </div>
 
           {/* Text Side */}
           <div className="w-full lg:w-1/2 text-center lg:text-left">
-            <h2 className="font-chinese text-5xl text-amber-400 mb-8 drop-shadow-md">
-              The Legend of Peng
+            <h2 className="font-chinese text-5xl text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500 mb-8 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              {t.about.title}
             </h2>
             
-            <div className="space-y-6 text-lg text-red-100 leading-relaxed font-body">
+            <div className="space-y-6 text-lg text-cyan-50 leading-relaxed font-body">
               <p>
-                On the frozen peaks of the digital Orient, <strong className="text-amber-300">Peng</strong> was born. Unlike other penguins who just wanted to slide on ice, Peng wanted to slide into the global economy.
+                {t.about.p1}
               </p>
               <p>
-                Legend says Peng ate a magical dumpling filled with blockchain data. Suddenly, he wasn't just a bird; he was a financial visionary. He traded his fish for Solana and swam all the way from the Yangtze River to the Moon.
+                {t.about.p2}
               </p>
-              <p className="bg-red-950/50 p-6 rounded-xl border-l-4 border-amber-400 italic">
-                "Why waddle when you can pump?" - Peng, 2024
+              <p className="bg-white/10 backdrop-blur-md p-6 rounded-xl border-l-4 border-cyan-400 italic text-cyan-100 shadow-inner">
+                {t.about.quote}
               </p>
               <p>
-                $PENG is not just a coin; it is a movement. A movement of prosperity, red envelopes, and zero-tax transactions. Join the dynasty before the dragons wake up!
+                {t.about.p3}
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
-        <svg width="400" height="400" viewBox="0 0 100 100" className="fill-amber-400">
-           <path d="M10,50 Q50,5 90,50 T10,50" />
+      {/* Decorative Elements - Ice Crystals */}
+      <div className="absolute top-0 right-0 opacity-20 pointer-events-none">
+        <svg width="400" height="400" viewBox="0 0 100 100" className="fill-cyan-400 blur-2xl">
+           <circle cx="50" cy="50" r="40" />
         </svg>
       </div>
     </section>
