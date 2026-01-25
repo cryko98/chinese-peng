@@ -4,6 +4,8 @@ import Hero from './components/Hero';
 import About from './components/About';
 import CommunityDivider from './components/CommunityDivider';
 import HowToBuy from './components/HowToBuy';
+import MemoryGame from './components/MemoryGame';
+import Chart from './components/Chart';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -15,6 +17,8 @@ const App: React.FC = () => {
         <About />
         <CommunityDivider />
         <HowToBuy />
+        <MemoryGame />
+        <Chart />
       </main>
       <Footer />
     </div>
