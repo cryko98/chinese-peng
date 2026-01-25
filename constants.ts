@@ -32,7 +32,7 @@ export const TRANSLATIONS = {
       p2: 'Legend says Peng ate a magical dumpling filled with blockchain data. Suddenly, he wasn\'t just a bird; he was a financial visionary.',
       quote: '"Why waddle when you can pump?" - Peng, 2024',
       p3: '$PENG is not just a coin; it is a movement. A movement of prosperity, red envelopes, and zero-tax transactions.',
-      sticker: 'LUCK'
+      sticker: 'PENG'
     },
     vision: {
       title: 'Emperor of the Blockchain',
@@ -93,7 +93,7 @@ export const TRANSLATIONS = {
       p2: '传说企鹅吃了一个装满区块链数据的神奇饺子。突然间，他不仅仅是一只鸟；他是一位金融远见者。',
       quote: '“既然可以暴涨，为什么要摇摆？” - 企鹅, 2024',
       p3: '$PENG 不仅仅是一种代币；它是一场运动。一场繁荣、红包和零税交易的运动。',
-      sticker: '幸运'
+      sticker: 'PENG'
     },
     vision: {
       title: '区块链之皇',
