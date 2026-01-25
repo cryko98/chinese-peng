@@ -17,8 +17,6 @@ const Hero: React.FC = () => {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        {/* Gradient overlay: Darker at top for text readability, with ice tint */}
-        <div className="absolute inset-0 bg-gradient-to-b from-sky-950/70 via-transparent to-transparent h-1/3" />
       </div>
 
       {/* Content Container */}

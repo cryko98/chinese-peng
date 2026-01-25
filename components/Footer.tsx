@@ -1,15 +1,15 @@
 import React from 'react';
 import { IMAGES } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
-import { TWITTER_URL } from '../constants';
+import { TWITTER_URL, TELEGRAM_URL } from '../constants';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-black text-amber-400 py-6 border-t border-cyan-900/50">
+    <footer className="bg-black text-amber-400 py-2 border-t border-cyan-900/50">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           
           <div className="flex items-center gap-3">
             <div className="relative">
@@ -29,12 +29,13 @@ const Footer: React.FC = () => {
           <div className="flex gap-6 font-chinese text-base">
             <a href="#about" className="hover:text-cyan-300 transition-colors">{t.nav.about}</a>
             <a href="#buy" className="hover:text-cyan-300 transition-colors">{t.nav.buy}</a>
+            <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 transition-colors">Telegram</a>
             <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 transition-colors">X</a>
           </div>
 
         </div>
 
-        <div className="mt-4 pt-4 border-t border-white/10 text-center text-gray-500 font-mono text-xs">
+        <div className="mt-2 pt-2 border-t border-white/10 text-center text-gray-500 font-mono text-xs">
           <p>{t.footer.rights}</p>
           <p className="mt-1 opacity-60">{t.footer.disclaimer}</p>
         </div>

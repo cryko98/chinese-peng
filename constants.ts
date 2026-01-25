@@ -1,7 +1,8 @@
 
-export const CONTRACT_ADDRESS = "xxxxxxxxxxxxxxxxxxxxxx";
-export const TWITTER_URL = "https://x.com";
+export const CONTRACT_ADDRESS = "FkwpBGmeZpkuZmffZiAJ3gKraw63i3QTDrze61N6pump";
+export const TWITTER_URL = "https://x.com/ChinesePen93001";
 export const PUMP_FUN_URL = "https://pump.fun";
+export const TELEGRAM_URL = "https://t.me/CHINESEPENGUIN";
 
 export const IMAGES = {
   LOGO: "https://wkkeyyrknmnynlcefugq.supabase.co/storage/v1/object/public/peng/peng.jpg",
@@ -21,6 +22,7 @@ export const TRANSLATIONS = {
       buyNow: 'Buy Now',
       copyCa: 'Copy Contract Address',
       follow: 'Follow on X',
+      joinTg: 'Join Telegram',
       buyPump: 'Buy on Pump.fun'
     },
     hero: {
@@ -82,6 +84,7 @@ export const TRANSLATIONS = {
       buyNow: '立即购买',
       copyCa: '复制合约地址',
       follow: '关注 X',
+      joinTg: '加入电报',
       buyPump: '在 Pump.fun 购买'
     },
     hero: {

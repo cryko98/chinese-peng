@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, Copy, Check } from 'lucide-react';
-import { IMAGES, CONTRACT_ADDRESS, TWITTER_URL } from '../constants';
+import { IMAGES, CONTRACT_ADDRESS, TWITTER_URL, TELEGRAM_URL } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Navbar: React.FC = () => {
@@ -97,12 +97,26 @@ const Navbar: React.FC = () => {
               {copied ? <Check size={14} className="text-green-400" /> : <Copy size={14} className="text-cyan-400 group-hover:text-white" />}
             </div>
 
+            {/* Telegram Logo */}
+            <a 
+              href={TELEGRAM_URL} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center justify-center w-10 h-10 bg-black rounded-full border border-cyan-500/30 hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all duration-300"
+              title={t.nav.joinTg}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white group-hover:fill-cyan-400 transition-colors">
+                <path d="M20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42l10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l-.002.001l-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15l4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"></path>
+              </svg>
+            </a>
+
             {/* X Logo */}
              <a 
               href={TWITTER_URL} 
               target="_blank" 
               rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center w-10 h-10 bg-black rounded-full border border-cyan-500/30 hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all duration-300"
+              title={t.nav.follow}
             >
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-white group-hover:fill-cyan-400 transition-colors">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
@@ -147,18 +161,33 @@ const Navbar: React.FC = () => {
               {copied ? <Check size={16} className="text-green-400" /> : <Copy size={16} className="text-cyan-400" />}
             </div>
 
-             {/* Mobile X Link */}
-             <a 
-              href={TWITTER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full bg-black hover:bg-gray-900 text-white py-3 rounded-lg border border-cyan-500/30"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-              </svg>
-              <span>{t.nav.follow}</span>
-            </a>
+            <div className="flex gap-2">
+              {/* Mobile Telegram Link */}
+              <a 
+                href={TELEGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 flex-1 bg-black hover:bg-gray-900 text-white py-3 rounded-lg border border-cyan-500/30"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white">
+                  <path d="M20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42l10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l-.002.001l-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15l4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"></path>
+                </svg>
+                <span>Telegram</span>
+              </a>
+
+              {/* Mobile X Link */}
+              <a 
+                href={TWITTER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 flex-1 bg-black hover:bg-gray-900 text-white py-3 rounded-lg border border-cyan-500/30"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                </svg>
+                <span>X</span>
+              </a>
+            </div>
 
             {navLinks.map((link) => (
               <a
