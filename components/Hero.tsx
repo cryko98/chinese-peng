@@ -19,9 +19,6 @@ const Hero: React.FC = () => {
       >
         {/* Gradient overlay: Darker at top for text readability, with ice tint */}
         <div className="absolute inset-0 bg-gradient-to-b from-sky-950/70 via-transparent to-transparent h-1/3" />
-        
-        {/* Bottom fade for smooth transition to About section with slight blur and ice tint */}
-        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent backdrop-blur-sm" />
       </div>
 
       {/* Content Container */}
