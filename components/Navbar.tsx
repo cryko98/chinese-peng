@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
     return `${addr.slice(0, 4)}...${addr.slice(-4)}`;
   };
 
-  // Reusable Language Toggle Component (Gold Style)
+  // Reusable Language Toggle Component
   const LanguageToggle = () => (
     <div 
       onClick={toggleLanguage}
@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
     >
       {/* Sliding indicator */}
       <div 
-        className={`absolute top-1 bottom-1 w-[28px] bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full shadow-[0_0_10px_rgba(251,191,36,0.4)] transition-all duration-300 ease-in-out ${language === 'en' ? 'left-1' : 'left-[34px]'}`}
+        className={`absolute top-1 bottom-1 w-[28px] bg-gradient-to-r from-amber-500 to-rose-500 rounded-full shadow-[0_0_10px_rgba(251,191,36,0.4)] transition-all duration-300 ease-in-out ${language === 'en' ? 'left-1' : 'left-[34px]'}`}
       />
       
       {/* Labels */}
@@ -55,15 +55,15 @@ const Navbar: React.FC = () => {
           {/* Logo / Brand */}
           <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
             <div className="relative">
-              <div className="absolute inset-0 bg-amber-400 rounded-full blur-sm opacity-50"></div>
+              <div className="absolute inset-0 bg-rose-500 rounded-full blur-sm opacity-50"></div>
               <img 
                 src={IMAGES.LOGO} 
-                alt="Gou Logo" 
+                alt="CWIF Logo" 
                 className="relative h-10 w-10 md:h-12 md:w-12 rounded-full border-2 border-amber-200"
               />
             </div>
-            <span className="font-chinese text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-yellow-400 tracking-wider hidden sm:block drop-shadow-[0_0_5px_rgba(251,191,36,0.8)]">
-              $GOU
+            <span className="font-chinese text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-rose-400 tracking-wider hidden sm:block drop-shadow-[0_0_5px_rgba(251,191,36,0.5)]">
+              $CWIF
             </span>
           </div>
 
@@ -88,12 +88,12 @@ const Navbar: React.FC = () => {
             {/* CA Display */}
             <div 
               onClick={handleCopy}
-              className="flex items-center gap-2 bg-black/40 hover:bg-black/60 px-3 py-1.5 rounded-full border border-amber-500/30 cursor-pointer transition-colors group"
+              className="flex items-center gap-2 bg-black/40 hover:bg-black/60 px-3 py-1.5 rounded-full border border-rose-500/30 cursor-pointer transition-colors group"
               title={t.nav.copyCa}
             >
               <span className="text-amber-200 text-xs font-mono">CA:</span>
               <span className="text-white text-xs font-mono">{truncateAddress(CONTRACT_ADDRESS)}</span>
-              {copied ? <Check size={14} className="text-green-400" /> : <Copy size={14} className="text-amber-400 group-hover:text-white" />}
+              {copied ? <Check size={14} className="text-green-400" /> : <Copy size={14} className="text-rose-400 group-hover:text-white" />}
             </div>
 
             {/* Telegram Logo */}
@@ -125,7 +125,7 @@ const Navbar: React.FC = () => {
             {/* Buy Button */}
             <a 
               href="#buy" 
-              className="bg-gradient-to-r from-amber-500 to-red-600 hover:from-amber-400 hover:to-red-500 text-white px-5 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(251,191,36,0.4)] border border-amber-200 text-sm"
+              className="bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-400 hover:to-amber-400 text-white px-5 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(244,63,94,0.4)] border border-rose-200 text-sm"
             >
               {t.nav.buyNow}
             </a>
@@ -201,7 +201,7 @@ const Navbar: React.FC = () => {
             <a 
               href="#buy"
               onClick={() => setIsOpen(false)} 
-              className="block w-full text-center bg-gradient-to-r from-amber-500 to-red-600 text-white font-bold py-3 mt-4 rounded-md uppercase shadow-[0_0_15px_rgba(251,191,36,0.3)]"
+              className="block w-full text-center bg-gradient-to-r from-rose-500 to-amber-500 text-white font-bold py-3 mt-4 rounded-md uppercase shadow-[0_0_15px_rgba(244,63,94,0.3)]"
             >
               {t.nav.buyPump}
             </a>

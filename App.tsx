@@ -12,14 +12,14 @@ const App: React.FC = () => {
   return (
     <LanguageProvider>
       <div className="min-h-screen flex flex-col overflow-x-hidden bg-red-950">
-        {/* Base Background: Deep Red/Gold Gradient */}
-        <div className="fixed inset-0 z-0 bg-gradient-to-b from-red-900 via-red-950 to-black pointer-events-none"></div>
+        {/* Base Background: Deep Red/Gold Gradient with Rose hint */}
+        <div className="fixed inset-0 z-0 bg-gradient-to-b from-red-900 via-rose-950 to-black pointer-events-none"></div>
         
         {/* Pattern Overlay */}
         <div className="fixed inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/chinese-pattern.png')] opacity-30 pointer-events-none mix-blend-soft-light"></div>
         
-        {/* Warm Glow Overlay (Replacing Ice/Snow) */}
-        <div className="fixed inset-0 z-0 bg-gradient-to-tr from-yellow-900/20 via-transparent to-orange-900/20 pointer-events-none"></div>
+        {/* Warm Glow Overlay with Pink/Gold Fusion */}
+        <div className="fixed inset-0 z-0 bg-gradient-to-tr from-rose-900/20 via-transparent to-amber-900/20 pointer-events-none"></div>
 
         <Navbar />
         <main className="flex-grow relative z-10">

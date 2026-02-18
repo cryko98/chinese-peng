@@ -32,11 +32,11 @@ const HowToBuy: React.FC = () => {
   return (
     <section id="buy" className="py-24 relative">
        {/* Background gradient */}
-       <div className="absolute inset-0 bg-gradient-to-b from-black via-red-950 to-red-900"></div>
+       <div className="absolute inset-0 bg-gradient-to-b from-black via-rose-950 to-red-900"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="font-chinese text-5xl text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500 mb-6 drop-shadow-sm">
+          <h2 className="font-chinese text-5xl text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-rose-400 mb-6 drop-shadow-sm">
             {t.buy.title}
           </h2>
           <p className="text-xl text-amber-200/80">{t.buy.subtitle}</p>
@@ -47,7 +47,7 @@ const HowToBuy: React.FC = () => {
           {steps.map((step, index) => (
             <div key={index} className="relative group">
               {/* Red Envelope / Paper Style Card */}
-              <div className="bg-red-900/60 backdrop-blur-md rounded-xl p-8 h-full border-2 border-amber-600/40 hover:border-amber-400 hover:bg-red-800/80 hover:shadow-[0_0_30px_rgba(251,191,36,0.15)] transition-all duration-300 flex flex-row items-center text-left gap-6">
+              <div className="bg-red-900/60 backdrop-blur-md rounded-xl p-8 h-full border-2 border-amber-600/40 hover:border-rose-400 hover:bg-red-800/80 hover:shadow-[0_0_30px_rgba(244,63,94,0.15)] transition-all duration-300 flex flex-row items-center text-left gap-6">
                 
                 <div className="bg-gradient-to-br from-amber-600 to-red-800 w-20 h-20 min-w-[5rem] rounded-full flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform border-2 border-amber-300/50">
                   {step.icon}
@@ -68,12 +68,12 @@ const HowToBuy: React.FC = () => {
         </div>
 
         <div className="mt-16 text-center">
-            <div className="inline-block p-1 bg-gradient-to-r from-amber-500 via-yellow-200 to-amber-500 rounded-full shadow-[0_0_25px_rgba(245,158,11,0.6)] animate-pulse">
+            <div className="inline-block p-1 bg-gradient-to-r from-rose-500 via-amber-300 to-rose-500 rounded-full shadow-[0_0_25px_rgba(244,63,94,0.6)] animate-pulse">
                 <a 
                     href={PUMP_FUN_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-12 py-4 bg-red-950 rounded-full text-2xl font-bold font-chinese hover:bg-red-900 transition-colors text-amber-400"
+                    className="block px-12 py-4 bg-red-950 rounded-full text-2xl font-bold font-chinese hover:bg-red-900 transition-colors text-amber-100"
                 >
                     {t.buy.cta}
                 </a>
