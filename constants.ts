@@ -1,6 +1,6 @@
 
 export const CONTRACT_ADDRESS = "GjAVDGJs2gP4QzaKT9qvJ4Q47mjP9G2URsKcDAMPpump";
-export const TWITTER_URL = "https://x.com";
+export const TWITTER_URL = "https://x.com/i/communities/2024221842890797482";
 export const PUMP_FUN_URL = "https://pump.fun";
 export const TELEGRAM_URL = "https://t.me/chinesewifonsol";
 
@@ -26,7 +26,7 @@ export const TRANSLATIONS = {
       buyPump: 'Buy on Pump.fun'
     },
     hero: {
-      title: 'CHINESE WIF DOG'
+      title: 'CHINESE WIF'
     },
     about: {
       title: 'The Legend of Wif',
@@ -61,7 +61,7 @@ export const TRANSLATIONS = {
       caLabel: 'DexScreener CA'
     },
     footer: {
-      rights: '© 2026 Chinese Wif Dog. All rights reserved.',
+      rights: '© 2026 Chinese Wif. All rights reserved.',
       disclaimer: 'This is a memecoin ($CWIF) for entertainment. Bark at your own risk.'
     }
   },
@@ -78,7 +78,7 @@ export const TRANSLATIONS = {
       buyPump: '在 Pump.fun 购买'
     },
     hero: {
-      title: 'CHINESE WIF DOG'
+      title: 'CHINESE WIF'
     },
     about: {
       title: 'Wif 的传说',
@@ -113,7 +113,7 @@ export const TRANSLATIONS = {
       caLabel: 'DexScreener 合约'
     },
     footer: {
-      rights: '© 2026 Chinese Wif Dog. 版权所有。',
+      rights: '© 2026 Chinese Wif. 版权所有。',
       disclaimer: '这是一个娱乐用的模因币 ($CWIF)。风险自负。'
     }
   }

@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
               />
             </div>
             <div>
-              <h3 className="font-chinese text-xl tracking-wider text-white">CHINESE WIF DOG 狗</h3>
+              <h3 className="font-chinese text-xl tracking-wider text-white">CHINESE WIF 狗</h3>
               <p className="text-amber-500 text-xs">$CWIF</p>
             </div>
           </div>
