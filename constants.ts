@@ -1,6 +1,6 @@
 
 export const CONTRACT_ADDRESS = "xxxxxxxxxxxxxxxxxxxxxx";
-export const TWITTER_URL = "https://x.com";
+export const TWITTER_URL = "https://x.com/chinesedoggou";
 export const PUMP_FUN_URL = "https://pump.fun";
 export const TELEGRAM_URL = "https://t.me/chinesedoggou";
 
