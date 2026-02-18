@@ -19,7 +19,7 @@ const MemoryGame: React.FC = () => {
   const [isWon, setIsWon] = useState(false);
   const [isLocked, setIsLocked] = useState(false);
 
-  // Filters for penguin variations
+  // Filters for dog variations
   const filters = [
     'hue-rotate-0',    
     'hue-rotate-60',   
@@ -96,23 +96,23 @@ const MemoryGame: React.FC = () => {
 
   return (
     <section id="game" className="py-24 relative overflow-hidden">
-      {/* Background - Deep Cold Red */}
-      <div className="absolute inset-0 bg-gradient-to-b from-red-950 to-slate-900"></div>
+      {/* Background - Deep Red */}
+      <div className="absolute inset-0 bg-gradient-to-b from-red-900 to-black"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="font-chinese text-4xl md:text-5xl text-amber-400 mb-4 drop-shadow-[0_0_10px_rgba(251,191,36,0.6)]">
             {t.game.title}
           </h2>
-          <p className="text-cyan-100 text-lg mb-4">{t.game.subtitle}</p>
+          <p className="text-amber-100 text-lg mb-4">{t.game.subtitle}</p>
           
           <div className="flex justify-center items-center gap-6 font-chinese text-xl text-white">
-            <div className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-lg border border-cyan-500/50">
+            <div className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-lg border border-amber-500/50">
               {t.game.moves}: <span className="text-amber-400">{moves}</span>
             </div>
             <button 
               onClick={initializeGame}
-              className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-4 py-2 rounded-lg font-bold transition-all shadow-[0_0_15px_rgba(34,211,238,0.4)]"
+              className="flex items-center gap-2 bg-gradient-to-r from-amber-600 to-red-600 hover:from-amber-500 hover:to-red-500 text-white px-4 py-2 rounded-lg font-bold transition-all shadow-[0_0_15px_rgba(251,191,36,0.4)]"
             >
               <RefreshCw size={20} /> {t.game.restart}
             </button>
@@ -129,16 +129,16 @@ const MemoryGame: React.FC = () => {
               >
                 <div className={`w-full h-full transition-all duration-500 preserve-3d ${card.isFlipped || card.isMatched ? 'rotate-y-180' : ''}`}>
                   
-                  {/* Card Back (Ice Style) */}
-                  <div className="absolute inset-0 backface-hidden bg-gradient-to-br from-cyan-900 to-slate-900 border-2 border-cyan-400/60 rounded-xl flex items-center justify-center shadow-lg group-hover:border-cyan-200 group-hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all z-10">
-                    <span className="font-chinese text-4xl text-cyan-500/50 select-none drop-shadow-[0_0_5px_rgba(34,211,238,0.8)]">福</span>
+                  {/* Card Back (Jade/Gold Style) */}
+                  <div className="absolute inset-0 backface-hidden bg-gradient-to-br from-green-900 to-emerald-950 border-2 border-amber-400/60 rounded-xl flex items-center justify-center shadow-lg group-hover:border-amber-200 group-hover:shadow-[0_0_15px_rgba(251,191,36,0.4)] transition-all z-10">
+                    <span className="font-chinese text-4xl text-amber-500/70 select-none drop-shadow-[0_0_5px_rgba(251,191,36,0.8)]">福</span>
                   </div>
 
                   {/* Card Front (Image) */}
                   <div className="absolute inset-0 backface-hidden rotate-y-180 bg-white border-4 border-amber-400 rounded-xl overflow-hidden shadow-xl flex items-center justify-center">
                     <img 
                       src={IMAGES.LOGO} 
-                      alt="Peng" 
+                      alt="Gou" 
                       className={`w-full h-full object-cover ${card.filterClass}`}
                     />
                   </div>
@@ -149,11 +149,11 @@ const MemoryGame: React.FC = () => {
         </div>
 
         {isWon && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/60 z-20 rounded-xl backdrop-blur-sm">
-            <div className="text-center p-8 bg-slate-900/90 border-4 border-cyan-400 rounded-2xl animate-bounce shadow-[0_0_50px_rgba(34,211,238,0.5)]">
+          <div className="absolute inset-0 flex items-center justify-center bg-black/80 z-20 rounded-xl backdrop-blur-sm">
+            <div className="text-center p-8 bg-red-900/90 border-4 border-amber-400 rounded-2xl animate-bounce shadow-[0_0_50px_rgba(251,191,36,0.5)]">
               <Trophy size={64} className="text-amber-400 mx-auto mb-4 drop-shadow-[0_0_10px_rgba(251,191,36,0.8)]" />
               <h3 className="font-chinese text-4xl text-white mb-2">{t.game.victory}</h3>
-              <p className="text-cyan-200 mb-6">{t.game.found} {moves} {t.game.moves === '步数' ? '' : 'moves'}.</p>
+              <p className="text-amber-200 mb-6">{t.game.found} {moves} {t.game.moves === '步数' ? '' : 'moves'}.</p>
               <button 
                 onClick={initializeGame}
                 className="bg-amber-400 text-red-900 px-8 py-3 rounded-full font-bold font-chinese text-xl hover:scale-110 transition-transform shadow-lg"

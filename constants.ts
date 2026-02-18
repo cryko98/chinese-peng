@@ -1,139 +1,122 @@
 
-export const CONTRACT_ADDRESS = "FkwpBGmeZpkuZmffZiAJ3gKraw63i3QTDrze61N6pump";
-export const TWITTER_URL = "https://x.com/ChinesePen93001";
+export const CONTRACT_ADDRESS = "xxxxxxxxxxxxxxxxxxxxxx";
+export const TWITTER_URL = "https://x.com";
 export const PUMP_FUN_URL = "https://pump.fun";
-export const TELEGRAM_URL = "https://t.me/CHINESEPENGUIN";
+export const TELEGRAM_URL = "https://t.me/chinesedoggou";
 
 export const IMAGES = {
-  LOGO: "https://wkkeyyrknmnynlcefugq.supabase.co/storage/v1/object/public/peng/peng.jpg",
-  HERO_BG: "https://wkkeyyrknmnynlcefugq.supabase.co/storage/v1/object/public/peng/banner-1769363411403.png",
-  ABOUT_BANNER: "https://wkkeyyrknmnynlcefugq.supabase.co/storage/v1/object/public/peng/banner%20-%202026-01-25T190556.930.png",
-  EXTRA_BANNER: "https://wkkeyyrknmnynlcefugq.supabase.co/storage/v1/object/public/peng/banner-1769360826182.png"
+  LOGO: "https://wkkeyyrknmnynlcefugq.supabase.co/storage/v1/object/public/peng/trador%20(3).png",
+  // Using a generic red pattern or solid color if no specific hero BG is provided, 
+  // but we will reuse the About Banner for visual consistency if needed, or rely on CSS.
+  // Here we keep a placeholder or reuse one of the provided images.
+  HERO_BG: "https://wkkeyyrknmnynlcefugq.supabase.co/storage/v1/object/public/peng/banner%20-%202026-02-18T200120.865.png", 
+  ABOUT_BANNER: "https://wkkeyyrknmnynlcefugq.supabase.co/storage/v1/object/public/peng/banner%20-%202026-02-18T200120.865.png",
+  EXTRA_BANNER: "https://wkkeyyrknmnynlcefugq.supabase.co/storage/v1/object/public/peng/trador%20(3).png" // Reusing logo for extra if needed or about banner
 };
 
 export const TRANSLATIONS = {
   en: {
     nav: {
-      about: 'About',
+      about: 'About Gou',
       vision: 'Vision',
       buy: 'How to Buy',
-      game: 'Game',
       chart: 'Chart',
-      buyNow: 'Buy Now',
-      copyCa: 'Copy Contract Address',
-      follow: 'Follow on X',
-      joinTg: 'Join Telegram',
+      buyNow: 'Get $GOU',
+      copyCa: 'Copy CA',
+      follow: 'X.com',
+      joinTg: 'Telegram',
       buyPump: 'Buy on Pump.fun'
     },
     hero: {
-      title: 'CHINESE PENG 企鹅'
+      title: 'CHINESE DOG GOU 狗'
     },
     about: {
-      title: 'The Legend of Peng',
-      p1: 'On the frozen peaks of the digital Orient, Peng was born. Unlike other penguins who just wanted to slide on ice, Peng wanted to slide into the global economy.',
-      p2: 'Legend says Peng ate a magical dumpling filled with blockchain data. Suddenly, he wasn\'t just a bird; he was a financial visionary.',
-      quote: '"Why waddle when you can pump?" - Peng, 2024',
-      p3: '$PENG is not just a coin; it is a movement. A movement of prosperity, red envelopes, and zero-tax transactions.',
-      sticker: 'PENG'
+      title: 'The Legend of Gou',
+      p1: 'In Chinese culture, "Gou" (狗) symbolizes loyalty and honesty. But on the Solana blockchain, Gou is a bit different. He is the guardian of the green candles.',
+      p2: 'They say every time a transaction fails, Gou barks. Every time a coin pumps, Gou howls at the moon. He is not just a dog; he is a spiritual guide for degens.',
+      quote: '"Woof woof means buy the dip." - Gou, 2026',
+      p3: '$GOU is a community-driven movement. No taxes, just pure canine energy and good fortune for your wallet.',
+      sticker: 'GOU'
     },
     vision: {
-      title: 'Emperor of the Blockchain',
-      year: '2026: The Year of the Peng'
+      title: 'Guardian of the Chain',
+      year: '2026: The Year of the Gou'
     },
     buy: {
-      title: 'How to Buy',
-      subtitle: 'Follow the frozen path to enlightenment',
-      step1: 'Create Wallet',
-      desc1: 'Download Phantom or Solflare wallet.',
+      title: 'Acquire Gou',
+      subtitle: 'The path to loyalty starts here',
+      step1: 'Wallet Setup',
+      desc1: 'Get Phantom or Solflare.',
       step2: 'Get SOL',
-      desc2: 'Buy Solana (SOL) and send it to your wallet.',
-      step3: 'Go to Pump.fun',
-      desc3: 'Connect wallet and paste the $PENG address.',
-      step4: 'Swap for $PENG',
-      desc4: 'Confirm the transaction. Welcome to the family!',
-      cta: 'Buy on Pump.fun Now'
-    },
-    game: {
-      title: 'Peng\'s Memory Palace',
-      subtitle: 'Find the matching Pengs to unlock good fortune!',
-      moves: 'Moves',
-      restart: 'Restart',
-      victory: 'Victory!',
-      found: 'You found all the Pengs in',
-      playAgain: 'Play Again'
+      desc2: 'Load up on Solana.',
+      step3: 'Visit Pump.fun',
+      desc3: 'Connect and find $GOU.',
+      step4: 'Become Family',
+      desc4: 'Swap and hold forever.',
+      cta: 'Ape into $GOU'
     },
     chart: {
-      title: 'Live Chart',
-      subtitle: 'Track the Emperor\'s Wealth',
+      title: 'Market Watch',
+      subtitle: 'Watch Gou chase the candles',
       opening: 'Market Opening Soon',
       desc: 'The chart will be live immediately after the launch on Pump.fun.',
-      caLabel: 'CA for DexScreener'
+      caLabel: 'DexScreener CA'
     },
     footer: {
-      rights: '© 2026 Chinese peng 企鹅. All rights reserved.',
-      disclaimer: 'Cryptocurrency trading involves high risk. This is a memecoin for entertainment purposes.'
+      rights: '© 2026 Chinese Dog Gou 狗. All rights reserved.',
+      disclaimer: 'This is a memecoin ($GOU) for entertainment. Bark at your own risk.'
     }
   },
   cn: {
     nav: {
-      about: '关于',
+      about: '关于狗',
       vision: '愿景',
       buy: '如何购买',
-      game: '游戏',
       chart: '图表',
-      buyNow: '立即购买',
-      copyCa: '复制合约地址',
-      follow: '关注 X',
+      buyNow: '购买 $GOU',
+      copyCa: '复制合约',
+      follow: 'X.com',
       joinTg: '加入电报',
       buyPump: '在 Pump.fun 购买'
     },
     hero: {
-      title: 'CHINESE PENG 企鹅'
+      title: 'CHINESE DOG GOU 狗'
     },
     about: {
-      title: '企鹅的传说',
-      p1: '在数字东方的冰峰上，企鹅诞生了。与其他只想在冰上滑行的企鹅不同，企鹅想要滑入全球经济。',
-      p2: '传说企鹅吃了一个装满区块链数据的神奇饺子。突然间，他不仅仅是一只鸟；他是一位金融远见者。',
-      quote: '“既然可以暴涨，为什么要摇摆？” - 企鹅, 2024',
-      p3: '$PENG 不仅仅是一种代币；它是一场运动。一场繁荣、红包和零税交易的运动。',
-      sticker: 'PENG'
+      title: '狗的传说',
+      p1: '在中国文化中，“狗”（Gou）象征着忠诚和诚实。但在Solana区块链上，Gou有点不同。他是绿色蜡烛的守护者。',
+      p2: '据说每当交易失败时，Gou就会叫。每当硬币暴涨时，Gou就会对着月亮嚎叫。他不仅仅是一只狗；他是这种堕落者的精神向导。',
+      quote: '“汪汪意味着抄底。” - Gou, 2026',
+      p3: '$GOU 是一个社区驱动的运动。没有税收，只有纯粹的犬类能量和钱包的好运。',
+      sticker: '狗'
     },
     vision: {
-      title: '区块链之皇',
-      year: '2026: 企鹅之年'
+      title: '链上守护者',
+      year: '2026: 狗年大吉'
     },
     buy: {
-      title: '如何购买',
-      subtitle: '跟随冰冻之路走向开悟',
-      step1: '创建钱包',
-      desc1: '下载 Phantom 或 Solflare 钱包。',
+      title: '获取 Gou',
+      subtitle: '忠诚之路从这里开始',
+      step1: '设置钱包',
+      desc1: '下载 Phantom 或 Solflare。',
       step2: '获取 SOL',
-      desc2: '购买 Solana (SOL) 并发送到您的钱包。',
-      step3: '前往 Pump.fun',
-      desc3: '连接钱包并粘贴 $PENG 合约地址。',
-      step4: '交换 $PENG',
-      desc4: '确认交易。欢迎加入大家庭！',
-      cta: '立即在 Pump.fun 购买'
-    },
-    game: {
-      title: '企鹅记忆宫殿',
-      subtitle: '找到匹配的企鹅以解锁好运！',
-      moves: '步数',
-      restart: '重新开始',
-      victory: '胜利！',
-      found: '你找到了所有的企鹅，步数：',
-      playAgain: '再玩一次'
+      desc2: '购买 Solana (SOL)。',
+      step3: '访问 Pump.fun',
+      desc3: '连接并查找 $GOU。',
+      step4: '成为家人',
+      desc4: '交换并永远持有。',
+      cta: '立即购买 $GOU'
     },
     chart: {
-      title: '实时图表',
-      subtitle: '追踪皇帝的财富',
+      title: '市场观察',
+      subtitle: '看 Gou 追逐蜡烛',
       opening: '市场即将开启',
       desc: '图表将在 Pump.fun 发布后立即上线。',
-      caLabel: 'DexScreener 合约地址'
+      caLabel: 'DexScreener 合约'
     },
     footer: {
-      rights: '© 2026 Chinese peng 企鹅. 版权所有。',
-      disclaimer: '加密货币交易涉及高风险。这是一个用于娱乐目的的模因币。'
+      rights: '© 2026 Chinese Dog Gou 狗. 版权所有。',
+      disclaimer: '这是一个娱乐用的模因币 ($GOU)。风险自负。'
     }
   }
 };
